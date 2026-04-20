@@ -19,16 +19,16 @@ const NoteCard = ({ note, setNotes }) => {
         }
     }
   return (
-    <Link to={`/note/${note._id}`} className="card bg-slate-700 hover:shadow-lg hover:shadow-neutral-700 transition-all duration-200 border-t-4 border-solid border-fuchsia-50">
-    <div className='card-body  '>
-        <h3 className="card-title text-base-content">{note.title}</h3>
-        <p className="text-base-content/70 line-clamp-3 ">{note.content}</p>
+    <Link to={`/note/${note._id}`} className="card rounded-3xl border border-white/70 bg-white/30 backdrop-blur-lg p-6 shadow-xl  ">
+    <div className='card-body text-fuchsia-950 '>
+        <h3 className="card-title ">{note.title}</h3>
+        <p className=" line-clamp-3 ">{note.content}</p>
         <div className="card-actions justify-between items-center mt-4 ">
-            <span className="text-sm text-base-content/50">{formatDate(new Date(note.createdAt))}</span>
+            <span className="text-sm ">{formatDate(new Date(note.createdAt))}</span>
             <div className="flex items-center gap-1">
                 <PenSquareIcon className="text-primary" size={18} /> 
                 <button className="btn btn-ghost btn-sm p-0" onClick ={(e)=>handleDelete(e,note._id)}>
-                    <Trash2Icon className="text-red-500" size={18} />
+                    <Trash2Icon className="text-red-600 transition hover:scale-110" size={18} />
                 </button>
 
             </div>

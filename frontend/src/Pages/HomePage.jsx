@@ -39,7 +39,7 @@ function HomePage() {
   },[])
   return (
     
-    <div className='min-h-screen'>
+    <div className='min-h-screen bg-gradient-to-br from-purple-200 to-blue-300'>
      
       <NavBar/>
       {isRateLimited && <RateLimitedUI/> }

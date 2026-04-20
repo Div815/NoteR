@@ -72,30 +72,30 @@ const NoteDetailPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-base-200">
+    <div className="min-h-screen bg-gradient-to-br from-purple-200 to-blue-300" > 
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
           <div className="flex justify-between ">
-            <Link to={"/"} className="btn border border-blue-400 hover:bg-blue-400">
+            <Link to={"/"} className="btn border bg-white/40 border-white/40 hover:bg-white/40 text-purple-900">
               <ArrowLeftIcon className="h-5 w-5" />
               Back to Notes
             </Link>
-            <button onClick={handleDelete} className="btn  border-blue-400  hover:bg-blue-400 mb-5">
+            <button onClick={handleDelete} className="btn border bg-white/40 border-white/40 hover:bg-white/40 text-purple-900 mb-5">
               <Trash2Icon className="h-5 w-5" />
               Delete Note
             </button>
           </div>
 
-          <div className="card bg-base-100 border  border-blue-400">
+          <div className="card bg-white/40 backdrop-blur-2xl text-purple-900">
             <div className="card-body">
               <div className="form-control mb-4">
                 <label className="label">
-                  <span className="label-text">Title</span>
+                  <span className="label-text text-purple-900">Title</span>
                 </label>
                 <input
                   type="text"
                   placeholder="Note title"
-                  className="input input-bordered"
+                  className="input  bg-white/50 border-slate-200/50"
                   value={note.title}
                   onChange={(e) => setNote({ ...note, title: e.target.value })}
                 />
@@ -103,18 +103,18 @@ const NoteDetailPage = () => {
 
               <div className="form-control mb-4">
                 <label className="label">
-                  <span className="label-text">Content</span>
+                  <span className="label-text text-purple-900">Content</span>
                 </label>
                 <textarea
                   placeholder="Write your note here..."
-                  className="textarea textarea-bordered h-32"
+                  className="textarea bg-white/50 border-slate-200/50 h-32"
                   value={note.content}
                   onChange={(e) => setNote({ ...note, content: e.target.value })}
                 />
               </div>
 
               <div className="card-actions justify-end">
-                <button className="btn border border-blue-400  hover:bg-blue-400" disabled={saving} onClick={handleSave}>
+                <button className="btn border bg-white/40 border-white/40 hover:bg-white/40 text-purple-900" disabled={saving} onClick={handleSave}>
                   {saving ? "Saving..." : "Save Changes"}
                 </button>
               </div>
