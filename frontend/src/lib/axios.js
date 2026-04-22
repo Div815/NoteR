@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = import.meta.env.MODE==="development"? "https://noter-cnrz.onrender.com/api/notes" :"/api "
+const BASE_URL = import.meta.env.MODE==="development"? "http://localhost:5001/api" :"https://noter-cnrz.onrender.com/api";
 const api=axios.create({
     baseURL: BASE_URL
 })
