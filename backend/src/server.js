@@ -8,28 +8,13 @@ import path from 'path'
 
 const app=express()
 
-const allowedOrigins = [
-  'http://localhost:5174',                // Your local Vite/React port
-  'https://noter-cnrz.onrender.com'       // Your live Render frontend
-];
-
 const __dirname=path.resolve();
 
 const PORT = process.env.PORT || 5001
 //Middleware
 if (process.env.NODE_ENV !== "production"){
-
-
 app.use(cors({
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) === -1) {
-      return callback(new Error('CORS policy mismatch'), false);
-    }
-    return callback(null, true);
-  },
-  credentials: true
+    origin: "http://localhost:5173"
 }));
 }
 
