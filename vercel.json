@@ -8,8 +8,13 @@
     "backend": {
       "root": "backend",
       "routePrefix": "/_/backend",
-      "entrypoint": "index.js",
+      "entrypoint": "server.js",
       "builder": "@vercel/node"
     }
-  }
+  },
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/_/backend/api/$1" },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
